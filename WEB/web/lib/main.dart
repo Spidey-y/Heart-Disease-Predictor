@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Heart Disease Prediction',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromRGBO(92, 130, 192, 1)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromRGBO(92, 130, 192, 1)),
         useMaterial3: true,
       ),
       home: const AddNewUser(),

@@ -4,18 +4,17 @@ from pydantic import BaseModel
 class UserData(BaseModel):
     name: str
     address: str
-    sex: str
+    sex: int
     age: int
-    isSmoker: bool
+    isSmoker: int
     ciggPerDay: int
-    BPMeds: bool
-    PrevStroke: bool
-    PrevHyp: bool
-    Diabetes: bool
+    BPMeds: int
+    PrevStroke: int
+    PrevHyp: int
+    Diabetes: int
     TotChol: int
     SysBP: int
     DiaBP: int
     BMI: float
     HeartRate: int
     Glucose: int
-    CHDrisk: int

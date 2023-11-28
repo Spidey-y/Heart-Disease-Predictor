@@ -7,7 +7,7 @@ import random as rnd
 router = APIRouter()
 
 
-@router.post("/store_data", response_model=UserData)
+@router.post("/store_data")
 def store_data(user_data: UserData):
     db = sqlite3.connect("data.db")
     query = """INSERT INTO users (
@@ -52,4 +52,4 @@ def store_data(user_data: UserData):
         rnd.choice([0, 1])
     ))
     db.commit()
-    return {"message": "Data stored successfully", "data": user_data.dict()}
+    return {"message": "Data stored successfully", "data": user_data.model_dump_json()}
