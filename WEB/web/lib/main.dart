@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:web/new_user.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
+import 'histoy.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -26,13 +28,13 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const LandingPage(),
+      home: const HomePage(),
     );
   }
 }
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class LandingPage extends StatelessWidget {
                   const SizedBox(height: 50),
                   addNewButton(context),
                   const SizedBox(height: 20),
-                  historyButton(),
+                  historyButton(context),
                 ],
               ),
             ),
@@ -139,8 +141,16 @@ class LandingPage extends StatelessWidget {
     );
   }
 
-  InkWell historyButton() {
+  InkWell historyButton(context) {
     return InkWell(
+      focusColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const HistoryPage()));
+      },
       child: Container(
         padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
         decoration: BoxDecoration(

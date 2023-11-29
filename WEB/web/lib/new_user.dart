@@ -209,16 +209,11 @@ class _AddNewUserState extends State<AddNewUser> {
             );
             if (response.statusCode == 200) {
               var data = jsonDecode(response.body);
-              print(data);
-              if (data['data'] == 0) {
-                // ignore: use_build_context_synchronously
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => ResultPage(isHeartDisease: 0)));
-              } else {
-                // ignore: use_build_context_synchronously
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => ResultPage(isHeartDisease: 1)));
-              }
+
+              // ignore: use_build_context_synchronously
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) =>
+                      ResultPage(isHeartDisease: data['data'])));
             } else {
               setState(() {
                 isError = true;
