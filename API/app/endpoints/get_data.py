@@ -6,7 +6,7 @@ router = APIRouter()
 # TODO add pagination
 
 
-@router.get("/get_data", response_model=list[UserData])
+@router.get("/get_data")
 def get_data():
     db = sqlite3.connect("data.db")
     query = "SELECT * FROM users"

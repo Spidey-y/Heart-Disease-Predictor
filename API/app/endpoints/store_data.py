@@ -52,4 +52,4 @@ def store_data(user_data: UserData):
         rnd.choice([0, 1])
     ))
     db.commit()
-    return {"message": "Data stored successfully", "data": user_data.model_dump_json()}
+    return {"message": "Data stored successfully", "data": rnd.choice([0, 1])}
