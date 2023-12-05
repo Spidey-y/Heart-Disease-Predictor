@@ -282,7 +282,8 @@ class _AddNewUserState extends State<AddNewUser> {
                         ),
                         const SizedBox(height: 10),
                         customSlider(
-                            1000,
+                            124
+                            600,
                             colesterol,
                             (v) => setState(() {
                                   colesterol = v.toInt();
@@ -295,7 +296,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(300, sysBP, (v) {
+                        customSlider(84, 295, sysBP, (v) {
                           setState(() {
                             sysBP = v.toInt();
                           });
@@ -307,7 +308,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(200, diaBP, (v) {
+                        customSlider(48, 142, diaBP, (v) {
                           setState(() {
                             diaBP = v.toInt();
                           });
@@ -319,7 +320,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(200, glucose, (v) {
+                        customSlider(40, 390, glucose, (v) {
                           setState(() {
                             glucose = v.toInt();
                           });
@@ -336,7 +337,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(200, weight, (v) {
+                        customSlider(0, 200, weight, (v) {
                           setState(() {
                             weight = v.toInt().toDouble();
                           });
@@ -349,6 +350,7 @@ class _AddNewUserState extends State<AddNewUser> {
                         ),
                         const SizedBox(height: 10),
                         customSlider(
+                            0, 
                             250,
                             height,
                             (v) => setState(() {
@@ -362,7 +364,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(200, heartRate, (v) {
+                        customSlider(45, 140, heartRate, (v) {
                           setState(() {
                             heartRate = v.toInt();
                           });
@@ -438,7 +440,7 @@ class _AddNewUserState extends State<AddNewUser> {
                               TextStyle(fontSize: 20, color: Colors.grey[400]),
                         ),
                         const SizedBox(height: 10),
-                        customSlider(50, ciggPerDay, (v) {
+                        customSlider(0, 70, ciggPerDay, (v) {
                           setState(() {
                             ciggPerDay = v.toInt().toDouble();
                           });
@@ -627,7 +629,7 @@ class _AddNewUserState extends State<AddNewUser> {
                   style: TextStyle(fontSize: 20, color: Colors.grey[400]),
                 ),
                 const SizedBox(height: 10),
-                customSlider(100, age, (v) {
+                customSlider(32, 69, age, (v) {
                   setState(() {
                     age = v.toInt().toDouble();
                   });
@@ -713,14 +715,14 @@ class _AddNewUserState extends State<AddNewUser> {
     );
   }
 
-  customSlider(max, value, onChanged, cur) {
+  customSlider(min, max, value, onChanged, cur) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.3,
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Expanded(
           child: Slider(
+              min: min,
               max: max,
-              min: 0,
               divisions: max,
               label: value.toString(),
               value: value.toDouble(),

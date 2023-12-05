@@ -34,7 +34,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOI
     BMI REAL NOT NULL,
     HeartRate INTEGER NOT NULL,
     Glucose INTEGER NOT NULL,
-    CHDrisk INTEGER NOT NULL,
+    CHDrisk REAL NOT NULL,
     added_on DATE NOT NULL DEFAULT CURRENT_DATE
     )""")
 conn.commit()
