@@ -282,7 +282,7 @@ class _AddNewUserState extends State<AddNewUser> {
                         ),
                         const SizedBox(height: 10),
                         customSlider(
-                            124
+                            124,
                             600,
                             colesterol,
                             (v) => setState(() {
@@ -350,7 +350,7 @@ class _AddNewUserState extends State<AddNewUser> {
                         ),
                         const SizedBox(height: 10),
                         customSlider(
-                            0, 
+                            0,
                             250,
                             height,
                             (v) => setState(() {
